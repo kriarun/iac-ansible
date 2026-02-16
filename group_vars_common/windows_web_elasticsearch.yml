@@ -1,0 +1,16 @@
+﻿# Idempotence checks are per software (registry/path/service) and will be implemented in roles later.
+windows_web_elasticsearch_roles:
+  - elasticsearch
+  - jre
+
+software_share_root: "\\\\fileserver\\software"
+
+web_elasticsearch_installers:
+  elasticsearch:
+    type: msi
+    src: "{{ software_share_root }}\\elasticsearch\\elasticsearch-8.x.x-windows-x86_64.msi"
+    product_id: "{33333333-3333-3333-3333-333333333333}"
+  elasticsearch_plugins:
+    type: exe
+    src: "{{ software_share_root }}\\elasticsearch\\plugins\\plugin-installer.exe"
+    args: "/quiet"

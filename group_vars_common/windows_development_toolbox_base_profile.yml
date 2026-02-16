@@ -1,0 +1,25 @@
+﻿# Idempotence checks are per software (registry/path/service) and will be implemented in roles later.
+windows_development_toolbox_base_profile_roles:
+  - git
+  - java
+  - visual-studio-code
+
+software_share_root: "\\\\fileserver\\software"
+
+toolbox_base_profile_installers:
+  git:
+    type: exe
+    src: "{{ software_share_root }}\\git\\Git-latest-64-bit.exe"
+    args: "/VERYSILENT /NORESTART"
+  visual_studio_code:
+    type: exe
+    src: "{{ software_share_root }}\\vscode\\VSCodeSetup-x64-latest.exe"
+    args: "/silent /mergetasks=!runcode"
+
+jdk_version:
+  - 8
+  - 11
+jdk_installation_path: "C:\\Java"
+jdk_file:
+  8: "{{ software_share_root }}\\java\\jdk-8uXXX-windows-x64.exe"
+  11: "{{ software_share_root }}\\java\\jdk-11.0.XX_windows-x64_bin.msi"

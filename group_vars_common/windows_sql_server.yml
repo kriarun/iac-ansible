@@ -1,0 +1,16 @@
+﻿# Idempotence checks are per software (registry/path/service) and will be implemented in roles later.
+windows_sql_server_roles:
+  - sql-server
+  - sql-server-management-studio
+
+software_share_root: "\\\\fileserver\\software"
+
+sql_server_installers:
+  sql_server_engine:
+    type: exe
+    src: "{{ software_share_root }}\\sqlserver\\SQLServer2022-x64-ENU.exe"
+    args: "/Q /ACTION=Install /IACCEPTSQLSERVERLICENSETERMS"
+  sql_server_management_studio:
+    type: exe
+    src: "{{ software_share_root }}\\sqlserver\\SSMS-Setup-ENU.exe"
+    args: "/install /quiet /norestart"

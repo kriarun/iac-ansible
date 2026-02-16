@@ -1,0 +1,16 @@
+﻿# Idempotence checks are per software (registry/path/service) and will be implemented in roles later.
+windows_ui_path_test_manager_roles:
+  - uipath-test-manager
+  - dotnet-hosting-bundle
+
+software_share_root: "\\\\fileserver\\software"
+
+uipath_test_manager_installers:
+  test_manager_package:
+    type: msi
+    src: "{{ software_share_root }}\\uipath\\test-manager\\UiPathTestManager.msi"
+    product_id: "{11111111-1111-1111-1111-111111111111}"
+  dotnet_hosting_bundle:
+    type: exe
+    src: "{{ software_share_root }}\\dotnet\\dotnet-hosting-8.0.x-win.exe"
+    args: "/install /quiet /norestart"

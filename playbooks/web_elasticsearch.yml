@@ -1,0 +1,7 @@
+﻿- name: Configure Windows Web Elasticsearch servers
+  hosts: windows_web_elasticsearch
+  gather_facts: false
+  vars_files:
+    - ../group_vars_common/windows_connection.yml
+    - ../group_vars_common/windows_web_elasticsearch.yml
+  roles: "{{ windows_web_elasticsearch_roles }}"

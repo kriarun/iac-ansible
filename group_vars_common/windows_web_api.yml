@@ -1,0 +1,16 @@
+﻿# Idempotence checks are per software (registry/path/service) and will be implemented in roles later.
+windows_web_api_roles:
+  - web-api-runtime
+  - iis
+
+software_share_root: "\\\\fileserver\\software"
+
+web_api_installers:
+  dotnet_runtime:
+    type: exe
+    src: "{{ software_share_root }}\\dotnet\\dotnet-runtime-8.0.x-win-x64.exe"
+    args: "/install /quiet /norestart"
+  web_api_agent:
+    type: msi
+    src: "{{ software_share_root }}\\web-api\\WebApiAgent.msi"
+    product_id: "{22222222-2222-2222-2222-222222222222}"

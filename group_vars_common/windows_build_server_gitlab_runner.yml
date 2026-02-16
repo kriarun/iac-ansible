@@ -1,0 +1,16 @@
+﻿# Idempotence checks are per software (registry/path/service) and will be implemented in roles later.
+windows_build_server_gitlab_runner_roles:
+  - gitlab-runner
+  - docker-cli
+
+software_share_root: "\\\\fileserver\\software"
+
+build_server_gitlab_runner_installers:
+  gitlab_runner:
+    type: exe
+    src: "{{ software_share_root }}\\gitlab-runner\\gitlab-runner-windows-amd64.exe"
+    args: "install --service"
+  docker_cli:
+    type: msi
+    src: "{{ software_share_root }}\\docker\\DockerCLI.msi"
+    product_id: "{44444444-4444-4444-4444-444444444444}"

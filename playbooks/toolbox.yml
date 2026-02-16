@@ -1,0 +1,7 @@
+﻿- name: Configure Windows development toolbox servers
+  hosts: windows_development_toolbox_base_profile
+  gather_facts: false
+  vars_files:
+    - ../group_vars_common/windows_connection.yml
+    - ../group_vars_common/windows_development_toolbox_base_profile.yml
+  roles: "{{ windows_development_toolbox_base_profile_roles }}"

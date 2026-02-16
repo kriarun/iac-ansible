@@ -1,0 +1,2 @@
+﻿ansible_user: "{{ lookup('env','SA_WINDOWS_USER_TEST') }}"
+ansible_password: "{{ lookup('env','SA_WINDOWS_PASSWORD_TEST') }}"

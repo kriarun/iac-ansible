@@ -1,0 +1,16 @@
+﻿# Idempotence checks are per software (registry/path/service) and will be implemented in roles later.
+windows_ui_path_orchestrator_roles:
+  - uipath-orchestrator
+  - iis
+
+software_share_root: "\\\\fileserver\\software"
+
+uipath_orchestrator_installers:
+  orchestrator_package:
+    type: msi
+    src: "{{ software_share_root }}\\uipath\\orchestrator\\UiPathOrchestrator.msi"
+    product_id: "{00000000-0000-0000-0000-000000000000}"
+  supporting_runtime:
+    type: exe
+    src: "{{ software_share_root }}\\runtime\\runtime-installer.exe"
+    args: "/quiet /norestart"

@@ -1,0 +1,7 @@
+﻿- name: Configure Windows UiPath Test Manager servers
+  hosts: windows_ui_path_test_manager
+  gather_facts: false
+  vars_files:
+    - ../group_vars_common/windows_connection.yml
+    - ../group_vars_common/windows_ui_path_test_manager.yml
+  roles: "{{ windows_ui_path_test_manager_roles }}"
