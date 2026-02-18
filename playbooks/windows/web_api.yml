@@ -3,5 +3,5 @@
   gather_facts: false
   vars_files:
     - ../../group_vars_common/windows/connection.yml
-    - ../../group_vars_common/windows/windows_web_api.yml
+    - ../../group_vars_common/windows/web_api.yml
   roles: "{{ windows_web_api_roles }}"

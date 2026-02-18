@@ -3,5 +3,5 @@
   gather_facts: false
   vars_files:
     - ../../group_vars_common/windows/connection.yml
-    - ../../group_vars_common/windows/windows_sql_server.yml
+    - ../../group_vars_common/windows/sql_server.yml
   roles: "{{ windows_sql_server_roles }}"
