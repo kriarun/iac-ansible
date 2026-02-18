@@ -1,0 +1,5 @@
+linux_tools_vm_roles:
+  - linux/net_tools
+
+linux_tools_packages:
+  - net-tools

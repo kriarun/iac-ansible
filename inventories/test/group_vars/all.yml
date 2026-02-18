@@ -1,2 +1,8 @@
-﻿ansible_user: "{{ lookup('env','SA_WINDOWS_USER_TEST') }}"
+ansible_user: "{{ lookup('env','SA_WINDOWS_USER_TEST') }}"
 ansible_password: "{{ lookup('env','SA_WINDOWS_PASSWORD_TEST') }}"
+
+# Linux SSH placeholders (env-scoped)
+linux_ansible_user: "{{ lookup('env','SA_LINUX_USER_TEST') }}"
+linux_ssh_private_key_file: "{{ lookup('env','SA_LINUX_SSH_KEY_PATH_TEST') }}"
+linux_become: true
+linux_become_user: root

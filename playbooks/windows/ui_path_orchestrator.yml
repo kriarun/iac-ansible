@@ -1,0 +1,7 @@
+- name: Configure Windows UiPath Orchestrator servers
+  hosts: windows_ui_path_orchestrator
+  gather_facts: false
+  vars_files:
+    - ../../group_vars_common/windows/connection.yml
+    - ../../group_vars_common/windows/windows_ui_path_orchestrator.yml
+  roles: "{{ windows_ui_path_orchestrator_roles }}"

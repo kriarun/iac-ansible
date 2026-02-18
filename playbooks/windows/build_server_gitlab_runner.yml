@@ -1,0 +1,7 @@
+- name: Configure Windows Build Server GitLab Runner servers
+  hosts: windows_build_server_gitlab_runner
+  gather_facts: false
+  vars_files:
+    - ../../group_vars_common/windows/connection.yml
+    - ../../group_vars_common/windows/windows_build_server_gitlab_runner.yml
+  roles: "{{ windows_build_server_gitlab_runner_roles }}"

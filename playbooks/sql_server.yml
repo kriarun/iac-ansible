@@ -1,7 +1,0 @@
-﻿- name: Configure Windows SQL Server servers
-  hosts: windows_sql_server
-  gather_facts: false
-  vars_files:
-    - ../group_vars_common/windows_connection.yml
-    - ../group_vars_common/windows_sql_server.yml
-  roles: "{{ windows_sql_server_roles }}"

@@ -1,0 +1,7 @@
+- name: Configure Windows Web API servers
+  hosts: windows_web_api
+  gather_facts: false
+  vars_files:
+    - ../../group_vars_common/windows/connection.yml
+    - ../../group_vars_common/windows/windows_web_api.yml
+  roles: "{{ windows_web_api_roles }}"

@@ -1,0 +1,9 @@
+- name: Install net-tools package (provides netstat)
+  ansible.builtin.package:
+    name: "{{ linux_tools_packages }}"
+    state: present
+
+- name: Verify netstat is available
+  ansible.builtin.command: which netstat
+  register: netstat_check
+  changed_when: false

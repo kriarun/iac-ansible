@@ -1,0 +1,7 @@
+- name: Configure Linux tools VM servers
+  hosts: linux_tools_vm
+  gather_facts: true
+  vars_files:
+    - ../../group_vars_common/linux/connection.yml
+    - ../../group_vars_common/linux/linux_tools_vm.yml
+  roles: "{{ linux_tools_vm_roles }}"
